@@ -1,2 +1,13 @@
 # Virtual Environment Folder
 venv/
+
+# Setup tools files
+build/
+dist/
+*.egg-info
+
+# Cache Files
+__pycache__
+
+# Local Test files
+local_tests.py

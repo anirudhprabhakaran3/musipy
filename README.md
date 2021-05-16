@@ -4,17 +4,17 @@ Python library for song analysis
 # Aims/Milestones to acheive
 
 ### Basics
-[] Read Audio File
-[] Plot Audio spectrum
-[] Save Audio File
+[ ] Read Audio File<br>
+[ ] Plot Audio spectrum<br>
+[ ] Save Audio File<br>
 
 ### Intermediate
-[] Find tempo of audio
-[] Find pitch of audio
+[ ] Find tempo of audio<br>
+[ ] Find pitch of audio<br>
 
 ### Advanced
-[] Quantify groove. More "groovy", higher score.
-[] Find more quantisations for danceability, acousticness and more
+[ ] Quantify groove. More "groovy", higher score.<br>
+[ ] Find more quantisations for danceability, acousticness and more<br>
 
 ### Dreams
-[] Algorithm to predict performance of track based on quantisations
+[ ] Algorithm to predict performance of track based on quantisations<br>

@@ -1,37 +1,58 @@
-import matplotlib.pyplot as plt
 import numpy as np
-import wave
-import sys
+import matplotlib.pyplot as plt
+from scipy.io.wavfile import read, write
+from math import ceil
 
 def load_wav(path):
     """
-        This funciton loads a WAV file
-        into the program.
+        Function to load WAV file into the
+        project. Uses scipy.io.wavfile.read
 
-        Input -> path to the WAV file
-        Output -> array with WAV file data, 
-                  frame rate of the audio
+        Input -> Path of the WAV file
+        Output -> Sample rate of audio, and Numpy
+                  array containing data
     """
-    wav_file = wave.open(path)
-    samples = wav_file.getnframes()
-    audio = wav_file.readframes(samples)
+    sample_rate, audio = read(path)
 
-    audio = np.frombuffer(audio, dtype=np.int16)
-    audio = audio.astype(np.float32)
+    audio = np.array(audio, dtype=float)
 
-    frame_rate = wav_file.getframerate()
+    return sample_rate, audio
 
-    return audio, frame_rate
-
-def plot_wav(audio, frame_rate):
+def write_wav(audio, sample_rate, path):
     """
-        This function plots the waveform
-        of the audio file.
+        Function to write WAV file to system.
+        Uses scipy.io.wavfile.write
 
-        Input -> Audio, Frame Rate
-        Output -> Plot of the wave
+        Input -> Audio array, sample rate and path
+                 to save to.
     """
-    temp_audio = audio[1:100000]
+    write(path, sample_rate, audio)
 
-    plt.plot(temp_audio)
+def plot_wav(audio):
+    """
+        Function that plots audio data
+        Uses matplotlib.pyplot.
+
+        Input -> Audio array
+        Output -> Matplotlib diagram
+    """
+    plt.plot(audio)
     plt.show()
+
+def find_length(audio, sample_rate, round=False):
+    """
+        Function that returns length of the
+        audio file.
+
+        Input -> Audio array, sample rate, whether
+                 the output should be a rounded integer
+                 or float value
+        Output -> Float value of length of audio
+                  in seconds
+    """
+    length = len(audio) / sample_rate
+
+    if(round):
+        return ceil(length)
+    else:
+        return length

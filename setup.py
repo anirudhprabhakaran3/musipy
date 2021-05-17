@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-VERSION = '0.0.3' 
+VERSION = '0.0.1' 
 DESCRIPTION = 'Python package to analyse songs'
 LONG_DESCRIPTION = 'This python package helps analyse songs'
 
@@ -16,6 +16,6 @@ setup(
         install_requires=[
                 'matplotlib',
                 'numpy',
-                
+                'scipy',
         ],
 )

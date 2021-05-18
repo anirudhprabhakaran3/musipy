@@ -1,20 +1,27 @@
 # Musipy
 Python library for song analysis
 
-# Aims/Milestones to acheive
+# Install for usage
+It is recommended to set up a Python Virtual Environment for every project. This can easily be done by
+```
+python -m venv name_of_environment
+```
+To work in the environment, use 
+```
+source name_of_environment/bin/activate
+```
+on Linux, or 
+```
+name_of_environment/Scripts/activate
+```
+on Windows.
 
-### Basics
-[ ] Read Audio File<br>
-[ ] Plot Audio spectrum<br>
-[ ] Save Audio File<br>
+Musipy can be installed from `pip` using:
+```
+pip install musipy
+```
 
-### Intermediate
-[ ] Find tempo of audio<br>
-[ ] Find pitch of audio<br>
-
-### Advanced
-[ ] Quantify groove. More "groovy", higher score.<br>
-[ ] Find more quantisations for danceability, acousticness and more<br>
-
-### Dreams
-[ ] Algorithm to predict performance of track based on quantisations<br>
+# Install for development
+1. Fork this repository.
+2. Clone your copy of the repository using `git clone`.
+3. Make changes, upload to your fork and open a pull request (PR).
